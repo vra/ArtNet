@@ -1,0 +1,21 @@
+<!DOCTYPE htm>
+<html>
+{% load staticfiles %}
+<head>
+<meta charset="utf8">
+<title> ArtNet| Make Art work using Deep Learning</title>
+</head>
+<body>
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<input type="file" name="custom_img">
+		<button type="submit">开始测试</button>
+	</form>
+	<div>
+	{%if done %}
+	<img src="{% static img_name %}">
+	{% endif %}
+
+	</div>
+</body>
+</html>
