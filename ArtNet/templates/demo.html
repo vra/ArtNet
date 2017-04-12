@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="uk-notouch">
+<head>
+	<meta charset="utf-8">
+	<title>ArtNet</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/uikit.min.css">
+	<link rel="stylesheet" type="text/css" href="css/docs.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/uikit.min.js"></script>
+
+</head>
+<body class="tm-background">
+	<div class="tm-section tm-section-color-1 tm-section-colored">
+		<div class="uk-container uk-container-center uk-text-center">
+			<h1 class="uk-heading-large">ArtNet Online Demo</h1>
+		</div>
+		<div class="uk-container uk-container-center uk-text-center" style="text-align:center;">
+			<form action="" class="uk-form">
+				<fieldset data-uk-margin>
+					<input type="file" name="custom_img" onchange="readURL(this);">
+					<br clear="uk-hidden-small">
+					<br clear="uk-hidden-small">
+					<br clear="uk-hidden-small">
+					<button type="sumbit" class="uk-button uk-button-center uk-button-large uk-button-success tm-button-download"> Begin Transfer</button>
+				</fieldset>
+			</form>
+		</div>
+
+		<div class="uk-container uk-container-center uk-text-center uk-margin-top-remove">
+		<!-- <div class="uk-margin uk-margin-top-remove"> -->
+			<div class="uk-thumbnail">
+				<img src="images/stary_night.jpg" id="origin_img"  alt="Origin Image" width="500" height="600">
+				<img src="images/stary_night.jpg" id = "transfered_img" alt="Origin Image" width="500" height="600">
+			</div>
+		<!-- </div> -->
+		</div>	
+	</div>
+	<div class="tm-section tm-section-color-1 tm-section-colored uk-margin-top-remove"></div>
+	<div class="tm-section tm-section-color-1 tm-section-colored"></div>
+	<div class="tm-section tm-section-color-1 tm-section-colored"></div>
+
+	<script type="text/javascript">
+		function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#origin_img')
+                    .attr('src', e.target.result)
+                    .width(500)
+                    .height(600);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+	</script>
+</body>
+</html>
