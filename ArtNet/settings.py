@@ -123,7 +123,7 @@ print 'SITE_ROOT:', SITE_ROOT
 #STATIC_ROOT = os.path.join(SITE_ROOT,'static')
 #print 'static_ROOT:', STATIC_ROOT
 STATICFILES_DIRS = (
-  os.path.join(SITE_ROOT, '..','fast-style-transfer', 'data', 'outputs'),
+  os.path.join(SITE_ROOT, 'static'),
 )
 STATIC_URL = '/static/'
 
