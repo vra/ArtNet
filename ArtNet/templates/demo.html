@@ -6,8 +6,11 @@
 	<title>ArtNet</title>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/css/uikit.min.css">
 	<link rel="stylesheet" type="text/css" href="{% static "css/docs.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/image-picker.css" %}">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/uikit.min.js"></script>
+	<script src="{% static "js/image-picker.min.js" %}"></script>
+
 
 </head>
 <body class="tm-background">
@@ -23,7 +26,18 @@
 					<br clear="uk-hidden-small">
 					<br clear="uk-hidden-small">
 					<br clear="uk-hidden-small">
-					<button id="btn_go" type="sumbit" disabled="disabled" class="uk-button uk-button-center uk-button-large uk-button-success tm-button-download"> Begin Transfer</button>
+					<button type="sumbit" disabled="disabled" class="uk-button uk-button-center uk-button-large uk-button-success tm-button-download">Choose a Style</button>
+					<div class="picker">
+						<select class="image-picker show-label" name="style_id">
+							<option style="width: 300px; height: 300px;" data-img-src="{% static "images/s1.jpg" %}" data-img-class="first" value="1">s1</option>
+							<option style="width: 300px; height: 300px;" data-img-src="{% static "images/s2.jpg" %}"  value="2">s2</option>
+							<option style="width: 300px; height: 300px;" data-img-src="{% static "images/s3.jpg" %}"  value="3">s3</option>
+							<option style="width: 300px; height: 300px;" data-img-src="{% static "images/s4.jpg" %}"  value="4">s4</option>
+						</select>
+					<br clear="uk-hidden-small">
+					<br clear="uk-hidden-small">
+					<br clear="uk-hidden-small">
+					<button id="btn_go" type="sumbit" disabled="disabled" class="uk-button uk-button-center uk-button-large uk-button-success tm-button-download">Begin Transfer</button>
 				</fieldset>
 			</form>
 		</div>
@@ -65,10 +79,10 @@
 
             reader.readAsDataURL(input.files[0]);
 			document.getElementById('btn_go').disabled = false;
-
-			
         }
     }
+
+    $("select").imagepicker();
 	</script>
 </body>
 </html>

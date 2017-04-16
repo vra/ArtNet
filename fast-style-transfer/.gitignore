@@ -6,6 +6,7 @@ saver
 styles
 pngs
 preds
+checkpoints-dir
 
 *.sw*
 data

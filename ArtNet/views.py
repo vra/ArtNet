@@ -13,15 +13,17 @@ def index(request):
 def demo(request):
 	if request.method == 'POST' and request.FILES['custom_img']:
 		custom_img = request.FILES['custom_img']
-		tmp_dir, img_name = artwork(custom_img)
+		style_id = request.POST['style_id']
+		tmp_dir, img_name = artwork(custom_img, style_id)
 		render_dict = {'done': 1, 'tmp_dir': tmp_dir, 'img_name': img_name}
 
 		return render(request, 'demo.html', render_dict) 
 	else:
 		return render(request, 'demo.html')
 
-def artwork(img):
-	data_root_path = 'fast-style-transfer/data/'
+def artwork(img, style_id):
+	data_root_path = '/home/yunfeng/Dev/git/ArtNet/fast-style-transfer/data/'
+	SITE_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)))
 	
 	# Clean the inputs and outputs dir
 
@@ -46,5 +48,5 @@ def artwork(img):
 	if max(img.size) > resized_max_size:
 		img.resize(resized_size, Image.ANTIALIAS).save(img_path)
 	# Run style transfer
-	subprocess.call(['bash', 'ArtNet/evaluate.sh', 'data/inputs/'+tmp_dir])
+	subprocess.call(['bash', SITE_ROOT + '/evaluate.sh', 'data/inputs/'+tmp_dir, 'checkpoints-dir/cp-s'+style_id])
 	return tmp_dir, img_name

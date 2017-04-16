@@ -23,6 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*!=)*==ah(76%5j_k5hzgl^*=zca50y-d@8pqqckpfve+)bu6&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+#DEBUG = False
 DEBUG = True
 
 ALLOWED_HOSTS = ['114.215.66.43']
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'ArtNet.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['ArtNet/templates'],
+        'DIRS': ['/home/yunfeng/Dev/git/ArtNet/ArtNet/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,7 +119,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 SITE_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)))
-print 'SITE_ROOT:', SITE_ROOT
+#print 'SITE_ROOT:', SITE_ROOT
 #STATIC_ROOT = os.path.join(SITE_ROOT,)
 #STATIC_ROOT = os.path.join(SITE_ROOT,'static')
 #print 'static_ROOT:', STATIC_ROOT
