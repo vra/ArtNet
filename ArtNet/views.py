@@ -41,7 +41,7 @@ def artwork(img, style_id):
 			dst.write(chunk)
 	
 	# Resize the image
-	resized_max_size = 1024
+	resized_max_size = 512
 	img = Image.open(img_path)
 	ratio = min(resized_max_size/float(img.size[0]), resized_max_size/float(img.size[1]))
 	resized_size = (int(ratio * img.size[0]), int(ratio * img.size[1]))
