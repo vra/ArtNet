@@ -26,7 +26,7 @@ SECRET_KEY = '*!=)*==ah(76%5j_k5hzgl^*=zca50y-d@8pqqckpfve+)bu6&'
 #DEBUG = False
 DEBUG = True
 
-ALLOWED_HOSTS = ['114.215.66.43']
+ALLOWED_HOSTS = ['114.215.66.43', '123.206.129.160']
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'ArtNet.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/yunfeng/Dev/git/ArtNet/ArtNet/templates'],
+        'DIRS': ['ArtNet/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

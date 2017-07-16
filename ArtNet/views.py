@@ -22,16 +22,19 @@ def demo(request):
 		return render(request, 'demo.html')
 
 def artwork(img, style_id):
-	data_root_path = '/home/yunfeng/Dev/git/ArtNet/fast-style-transfer/data/'
 	SITE_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)))
+	data_root_path = os.path.join(SITE_ROOT, '../fast-style-transfer/data/') 
 	
 	# Clean the inputs and outputs dir
 
-	# Save the uploade image to disk
+	# Save the uploaded image to disk
 	tmp_dir = str(random.random()).split('.')[1]
 	while os.path.exists(data_root_path + 'inputs/' + tmp_dir):
 		tmp_dir = str(random.random()).split('.')[1]
-	os.makedirs(data_root_path + 'inputs/' + tmp_dir)
+	tmp_whole_path=data_root_path + 'inputs/' + tmp_dir
+	os.makedirs(tmp_whole_path)
+	print(tmp_whole_path)
+	print(tmp_dir)
 	img_name = 'img' + tmp_dir + '.png'
 	img_path = data_root_path + 'inputs/'+ tmp_dir + '/' + img_name
 
